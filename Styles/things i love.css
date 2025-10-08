@@ -5,47 +5,68 @@
     padding: 0;
 }
 
-/* --- BODY & BACKGROUND --- */
-body {
-    background-image: url('../images/background.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    font-family: Arial, sans-serif;
-    color: rgb(0,0,0);
-    line-height: 1.6;
-}
-
-/* --- NAVIGATION --- */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: black;
-    color: white;
-    padding: 10px 150px;
-}
-
-.header-links, .social-links {
-    display: flex;
-    gap: 25px;
-}
-
-.header-links a, .social-links a {
-    color: white;
+.social-icons a {
+    font-size: 30px;
+    margin: 0 10px;
     text-decoration: none;
+    transition: transform 0.3s;
 }
 
-.header-links a:hover, .social-links a:hover {
-    color: rgb(135,132,132);
-    text-decoration: underline;
+.social-icons a:hover {
+    transform: scale(1.2); /* grows slightly on hover */
 }
 
-.social-links img {
-    width: 30px;
-    height: 30px;
+/* Brand colors */
+.instagram { color: #E4405F; }   /* Instagram pink */
+.telegram { color: #0088cc; }    /* Telegram blue */
+.github { color: #333; }         /* GitHub black */
+.email { color: #D44638; }       /* Gmail red */
+.linkedin { color: #0077b5; }    /* LinkedIn blue */
+
+
+/* --- GLOBAL --- */
+body {
+  background-image: url('../images/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: Arial, sans-serif;
+  color: black;
 }
 
+/* --- NAV (exactly same as home) --- */
+nav {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 50px;
+}
+
+.header-links {
+  display: flex;
+  gap: 30px;
+  font-size: 20px;
+}
+
+.social-links {
+  display: flex;
+  gap: 20px;
+  font-size: 20px;
+}
+
+
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(135, 132, 132);
+  text-decoration: underline;
+}
 /* --- HEADER --- */
 header {
     text-align: center;
@@ -125,6 +146,97 @@ footer {
 .footer-links img {
     width: 30px;
     height: 30px;
+}
+/* --------------------------
+   BASE STYLES (Desktop)
+   -------------------------- */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+/* Desktop layouts already set in your CSS */
+
+/* --------------------------
+   Tablet Styles (768px - 1023px)
+   -------------------------- */
+@media (max-width: 1023px) {
+  nav {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 30px;
+  }
+
+  .header-links {
+    gap: 20px;
+    font-size: 18px;
+  }
+
+  .contact-forms {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .form-box {
+    width: 100%;
+    padding: 25px;
+  }
+
+  .what-i-love {
+    height: 350px;
+  }
+
+  .love-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .love-content p {
+    font-size: 1.1rem;
+  }
+}
+
+/* --------------------------
+   Mobile Styles (up to 767px)
+   -------------------------- */
+@media (max-width: 767px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 15px;
+  }
+
+  .header-links {
+    flex-direction: column;
+    gap: 10px;
+    font-size: 16px;
+  }
+
+  .social-icons {
+    justify-content: flex-start;
+    gap: 15px;
+  }
+
+  .contact-forms {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .form-box {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .what-i-love {
+    height: 300px;
+  }
+
+  .love-content h1 {
+    font-size: 2rem;
+  }
+
+  .love-content p {
+    font-size: 1rem;
+  }
 }
 
 
