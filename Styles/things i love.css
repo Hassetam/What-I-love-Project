@@ -1,0 +1,130 @@
+/* --- RESET --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- BODY & BACKGROUND --- */
+body {
+    background-image: url('../images/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: Arial, sans-serif;
+    color: rgb(0,0,0);
+    line-height: 1.6;
+}
+
+/* --- NAVIGATION --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 10px 150px;
+}
+
+.header-links, .social-links {
+    display: flex;
+    gap: 25px;
+}
+
+.header-links a, .social-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.header-links a:hover, .social-links a:hover {
+    color: rgb(135,132,132);
+    text-decoration: underline;
+}
+
+.social-links img {
+    width: 30px;
+    height: 30px;
+}
+
+/* --- HEADER --- */
+header {
+    text-align: center;
+    padding: 50px 20px 30px 20px;
+}
+
+header h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 20px;
+}
+
+/* --- CARDS --- */
+main {
+    padding: 20px 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.love-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(253, 222, 242); /* changed from rgba to pure white */
+    border-radius: 10px;
+    padding: 20px;
+    gap: 10px; /* decreased the gap between text and image */
+}
+
+.love-card .text {
+    flex: 1;
+    padding-right: 10px; /* decreased right padding */
+}
+
+.love-card .text h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.love-card .text p {
+    font-size: 18px;
+}
+
+.love-card .image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.love-card .image img {
+    width: 350px;
+    height: 250px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: rgba(249,243,243,0.7);
+    color: rgb(13,12,12);
+    padding: 20px 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links img {
+    width: 30px;
+    height: 30px;
+}
+
+
