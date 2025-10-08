@@ -1,0 +1,227 @@
+/* --- RESET --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- BODY & GLOBAL --- */
+body {
+  font-family: Arial, sans-serif;
+  color: #000;
+  background-image: url('../images/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* --- NAVIGATION --- */
+nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: #000;
+  color: white;
+  padding: 10px 80px;
+}
+
+.header-links, .social-links {
+  display: flex;
+  gap: 30px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: rgb(135, 132, 132);
+  text-decoration: underline;
+}
+
+.social-links img {
+  width: 30px;
+  height: 30px;
+}
+
+/* --- HEADING --- */
+h1 {
+  text-align: center;
+  font-size: 50px;
+  padding: 40px 0;
+  color: #000;
+}
+
+/* --- MAIN CONTENT --- */
+.about-container {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  padding: 0 80px 80px 80px;
+  position: relative;
+}
+
+/* Timeline line */
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: rgba(0,0,0,0.2);
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+/* Base card style */
+.about-card {
+  background-color: rgba(255,255,255,0.85);
+  padding: 25px;
+  border-radius: 15px;
+  font-size: 20px;
+  line-height: 1.8;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  position: relative;
+  z-index: 1;
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+}
+
+/* Zig-zag cards */
+.right-card {
+  align-self: flex-end;
+  width: 55%;
+}
+
+.left-card {
+  align-self: flex-start;
+  width: 55%;
+}
+
+/* Circles for timeline */
+.about-card .circle {
+  position: absolute;
+  top: 20px;
+  width: 20px;
+  height: 20px;
+  background-color: #000;
+  border-radius: 50%;
+}
+
+.right-card .circle {
+  left: -10px;
+}
+
+.left-card .circle {
+  right: -10px;
+}
+
+/* Full width image card */
+.full-image-card {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    border-radius: 15px;
+    background-color: rgba(0,0,0,0.1);
+    margin: 30px auto;
+    max-width: 1000px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.card-left,
+.card-right {
+    flex: 1;
+}
+
+.card-left {
+    display: flex;
+    flex-direction: column; /* for text */
+    justify-content: center;
+    color: black;
+}
+
+.card-right {
+    display: flex;
+    justify-content: flex-end; /* button on right */
+}
+
+/* --- FULL IMAGE BUTTON CARD --- */
+/* --- FULL IMAGE BUTTON CARD --- */
+.full-image-card {
+    background-color: rgba(255,255,255,0.8); /* same as other cards */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    gap: 20px;
+}
+
+/* Left side text */
+.card-left {
+    flex: 2;
+}
+
+/* Right side image */
+.card-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Text above the image */
+.image-text {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #333;
+}
+
+/* Clickable image */
+.image-button {
+    display: inline-block;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.image-button img {
+    display: block;
+    width: 400px;   /* elongated width */
+    height: 100px;  /* minimized height */
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.image-button:hover {
+    transform: scale(1.05);
+}
+
+
+/* --- FOOTER --- */
+footer {
+  background-color: rgba(249, 243, 243, 0.7);
+  color: #0d0c0c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 80px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 30px;
+}
+
+.footer-links img {
+  width: 30px;
+  height: 30px;
+}
+
