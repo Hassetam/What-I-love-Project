@@ -6,114 +6,103 @@
   <title>Contact</title>
   <link rel="stylesheet" href="Styles/contact.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
 </head>
 
 <body>
-  <nav>
-    <div class="header-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="things i love.html">Things I Love</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html">Contact</a>
-    </div>
-    <div class="social-icons">
+  <div class="page-content"><!-- START page-content, needed for sticky footer -->
+    <nav>
+      <div class="header-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="things i love.html">Things I Love</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="social-icons">
         <a href="https://www.instagram.com/hassuki.15" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
         <a href="https://t.me/mamaa15" target="_blank" class="telegram"><i class="fab fa-telegram-plane"></i></a>
         <a href="https://github.com/Hassetam" target="_blank" class="github"><i class="fab fa-github"></i></a>
         <a href="mailto:adugnahasset@gmail.com" class="email"><i class="fas fa-envelope"></i></a>
         <a href="https://www.linkedin.com/in/hasset-maemer-909b4a376/" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
-    </div>
-  </nav>
+      </div>
+    </nav>
 
-  <h1>Contact Me</h1>
+    <h1>Contact Me</h1>
 
-  <div class="social-container">
-    
-    <div class="social-side">
+    <div class="social-container">
+      <div class="social-side">
         <div>Get in touch with me via Social Media:</div>
         <div class="social-item">
-            <a href="https://www.instagram.com/hassuki.15" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
-            <span>Instagram</span>
+          <a href="https://www.instagram.com/hassuki.15" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+          <span>Instagram</span>
         </div>
-            <div class="social-item">
-            <a href="https://t.me/mamaa15" target="_blank" class="telegram"><i class="fab fa-telegram-plane"></i></a>
-            <span>Telegram</span>
+        <div class="social-item">
+          <a href="https://t.me/mamaa15" target="_blank" class="telegram"><i class="fab fa-telegram-plane"></i></a>
+          <span>Telegram</span>
         </div>
-    </div>
-
-    
-    <div class="social-side">
-         <div>Check my progress, let's connect!</div>
-      <div class="social-item">
-        <a href="https://github.com/Hassetam" target="_blank" class="github"><i class="fab fa-github"></i></a>
-        <span>GitHub</span>
       </div>
-      <div class="social-item">
-        <a href="https://www.linkedin.com/in/hasset-maemer-909b4a376/" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
-        <span>LinkedIn</span>
+      <div class="social-side">
+        <div>Check my progress, let's connect!</div>
+        <div class="social-item">
+          <a href="https://github.com/Hassetam" target="_blank" class="github"><i class="fab fa-github"></i></a>
+          <span>GitHub</span>
+        </div>
+        <div class="social-item">
+          <a href="https://www.linkedin.com/in/hasset-maemer-909b4a376/" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+          <span>LinkedIn</span>
+        </div>
       </div>
     </div>
-  </div>
-  
 
-  <div class="contact-forms">
-    
-    <div class="form-box email-form">
-      <h2>Send Me a Letter</h2>
-      <form action="#" method="post">
-        <label for="name">Name:</label>
-        <input type="text" id="name" required>
+    <div class="contact-forms">
+      <!-- Email Form -->
+      <div class="form-box email-form">
+        <h2>Send Me a Letter</h2>
+        <form action="#" method="get">
+          <label for="name">Name:</label>
+          <input type="text" id="name" required>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" required>
+          <label for="email">Email:</label>
+          <input type="email" id="email" required>
 
-        <label for="message">Message:</label>
-        <textarea id="message" required></textarea>
+          <label for="message">Message:</label>
+          <textarea id="message" required></textarea>
 
-        <button type="submit">Send</button>
-      </form>
-    </div>
+          <button type="submit">Send</button>
+        </form>
+      </div>
 
-    <div class="form-box meeting-form">
-      <h2>Meeting Form</h2>
-
-      <section>
-        <div>Want to connect? We can even schedule a meeting! Please choose your preference:</div>
-        <form action="#" method="get"></form>
+      <!-- Meeting Form -->
+      <div class="form-box meeting-form">
+        <h2>Meeting Form</h2>
+        <form action="#" method="get">
           <ol>
-            <li>
-                <label>Which way do you prefer to meet:</label>
-                <input type="radio" name="meeting_type" value="online" id="online" required>
-                <label for="online">Online</label>
-                <input type="radio" name="meeting_type" value="in_person" id="in_person" required>
-                <label for="in_person">In person</label> 
+            <li class="question-block">
+              <p>1. Which way do you prefer to meet?</p>
+              <div class="choice-group">
+                <label><input type="radio" name="meeting_type" value="online" required> Online</label>
+                <label><input type="radio" name="meeting_type" value="in_person" required> In person</label>
+              </div>
             </li>
-
-            <li>
-                <label>Which do you prefer:</label>
-                <input type="radio" name="session_time" value="morning" id="morning" required>
-                <label for="morning">Morning session</label>
-                <input type="radio" name="session_time" value="afternoon" id="afternoon" required>
-                <label for="afternoon">Afternoon session</label>
+            <li class="question-block">
+              <p>2. Which do you prefer?</p>
+              <div class="choice-group">
+                <label><input type="radio" name="session_time" value="morning" required> Morning session</label>
+                <label><input type="radio" name="session_time" value="afternoon" required> Afternoon session</label>
+              </div>
             </li>
-
-            <li>
-                <label>Please select a time that works best for you:</label>
-                <input type="radio" name="time_slot" value="10-11" id="time1">
-                <label for="time1">10:00 AM - 11:00 AM</label>
-                <input type="radio" name="time_slot" value="11-12" id="time2">
-                <label for="time2">11:00 AM - 12:00 PM</label>
-                <input type="radio" name="time_slot" value="1-2" id="time3">
-                <label for="time3">1:00 PM - 2:00 PM</label>
-                <input type="radio" name="time_slot" value="2-3" id="time4">
-                <label for="time4">2:00 PM - 3:00 PM</label>
+            <li class="question-block">
+              <p>3. Please select a time that works best for you:</p>
+              <div class="choice-group">
+                <label><input type="radio" name="time_slot" value="10-11" required> 10:00 AM - 11:00 AM</label>
+                <label><input type="radio" name="time_slot" value="11-12" required> 11:00 AM - 12:00 PM</label>
+                <label><input type="radio" name="time_slot" value="1-2" required> 1:00 PM - 2:00 PM</label>
+                <label><input type="radio" name="time_slot" value="2-3" required> 2:00 PM - 3:00 PM</label>
+              </div>
             </li>
-
-            <li>
-              <h3>Activities You Might Relate With Me</h3>
-              <table> 
+            <li class="question-block">
+              <h3>4. Activities You Might Relate With Me</h3>
+              <table>
                 <thead>
                   <tr>
                     <th>Activity</th>
@@ -121,54 +110,51 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>Spending time with people</td>
-                    <td><input type="checkbox" value="Spending time with people"></td>
-                  </tr>
-                  <tr>
-                    <td>Movies</td>
-                    <td><input type="checkbox" value="Movies"></td>
-                  </tr>
-                  <tr>
-                    <td>Traveling</td>
-                    <td><input type="checkbox" value="Traveling"></td>
-                  </tr>
-                  <tr>
-                    <td>Food</td>
-                    <td><input type="checkbox" value="Food"></td>
-                  </tr>
-                  <tr>
-                    <td>Photography</td>
-                    <td><input type="checkbox" value="Photography"></td>
-                  </tr>
+                  <tr><td>Spending time with people</td><td><input type="checkbox" value="Spending time with people"></td></tr>
+                  <tr><td>Movies</td><td><input type="checkbox" value="Movies"></td></tr>
+                  <tr><td>Traveling</td><td><input type="checkbox" value="Traveling"></td></tr>
+                  <tr><td>Food</td><td><input type="checkbox" value="Food"></td></tr>
+                  <tr><td>Photography</td><td><input type="checkbox" value="Photography"></td></tr>
                 </tbody>
               </table>
             </li>
-
-            <li>
-              <label>On a range of 10, how much do you rate the time you spent on my website?</label>
+            <li class="question-block">
+              <label>5. On a range of 10, how much do you rate the time you spent on my website?</label>
               <input type="number" min="1" max="10" required>
             </li>
-
-            <li>
-              <label for="range">How likely are you to try one of my hobbies?</label>
+            <li class="question-block">
+              <label for="range">6. How likely are you to try one of my hobbies?</label>
               <input type="range" id="range" name="range" min="1" max="10" required>
             </li>
           </ol>
-      </section>
-    </div>
-  </div>
+          <div class="form-buttons">
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+          </div>
+        </form>
+      </div>
+    </div><!-- END contact-forms -->
+  </div><!-- END page-content for sticky footer -->
 
-  
+  <!-- Footer -->
   <footer>
-    <p>© 2025 Hasset Maemer | All Rights Reserved</p>
+    <div class="footer-text">
+      &copy; 2025 Hasset Maemer. All rights reserved.
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="about me.html">About Me</a>
+      <a href="things i love.html">Things I Love</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </div>
     <div class="social-icons">
-    <a href="https://www.instagram.com" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
-    <a href="https://t.me/yourusername" target="_blank" class="telegram"><i class="fab fa-telegram-plane"></i></a>
-    <a href="https://github.com/yourusername" target="_blank" class="github"><i class="fab fa-github"></i></a>
-    <a href="mailto:youremail@example.com" class="email"><i class="fas fa-envelope"></i></a>
-    <a href="https://www.linkedin.com/in/yourusername" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://www.instagram.com/hassuki.15" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://t.me/mamaa15" target="_blank" class="telegram"><i class="fab fa-telegram-plane"></i></a>
+      <a href="https://github.com/Hassetam" target="_blank" class="github"><i class="fab fa-github"></i></a>
+      <a href="mailto:adugnahasset@gmail.com" class="email"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/hasset-maemer-909b4a376/" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+    </div>
   </footer>
-
 </body>
 </html>

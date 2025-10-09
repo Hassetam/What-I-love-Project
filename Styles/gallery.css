@@ -1,47 +1,25 @@
 /* --- RESET --- */
+/* Resets box-sizing, margin, and padding for all elements */
+
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.social-icons a {
-    font-size: 30px;
-    margin: 0 10px;
-    text-decoration: none;
-    transition: transform 0.3s;
-}
-
-.social-icons a:hover {
-    transform: scale(1.2); /* grows slightly on hover */
-}
-
-/* Brand colors */
-.instagram { color: #E4405F; }   /* Instagram pink */
-.telegram { color: #0088cc; }    /* Telegram blue */
-.github { color: #333; }         /* GitHub black */
-.email { color: #D44638; }       /* Gmail red */
-.linkedin { color: #0077b5; }    /* LinkedIn blue */
-
-
-/* --- GLOBAL --- */
-body {
-  background-image: url('../images/background.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  font-family: Arial, sans-serif;
-  color: black;
-}
-
-/* --- NAV (exactly same as home) --- */
+/* --- NAVIGATION --- */
+/* Styles for the navigation bar and header links */
 nav {
+  position: fixed;
+  width: 100%;
+  top:0;
   background-color: black;
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 12px 50px;
+  z-index: 1000;
 }
 
 .header-links {
@@ -50,28 +28,53 @@ nav {
   font-size: 20px;
 }
 
-.social-links {
-  display: flex;
-  gap: 20px;
-  font-size: 20px;
-}
-
-
-
 a {
   color: white;
   text-decoration: none;
 }
+/* Header links */
+.header-links a:link { color: white; }
+.header-links a:visited { color: pink ; }
+.header-links a:hover { color: grey; }
+.header-links a:active { color:yellow }
 
-a:hover {
-  color: rgb(135, 132, 132);
-  text-decoration: underline;
+/* --- SOCIAL ICONS --- */
+/* Styles for social media icons and their brand colors */
+.social-icons a i {
+    font-size: 30px;
+    margin: 0 10px;
+}
+
+.social-icons a:hover i {
+    transform: scale(1.5);
+}
+
+/* Brand colors for social icons */
+.instagram { color: #E4405F; }
+.telegram { color: #0088cc; }
+.github { color: #333; }
+.email { color: #D44638; }
+.linkedin { color: #0077b5; }
+
+/* --- BODY & TYPOGRAPHY --- */
+/* Background image and font settings for the body */
+body {
+  background-image: url('../images/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: Arial, sans-serif;
+  font-size: medium;
+  font-weight: 400;
+  line-height: normal;
+  color: black;
+  overflow-x: hidden;
 }
 
 /* --- GALLERY INTRO --- */
 .gallery-intro {
     text-align: center;
-    padding: 40px 20px 20px;
+    padding: 100px 20px 20px 20px;
     font-size: 20px;
 }
 
@@ -97,117 +100,132 @@ a:hover {
     box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
 
-/* --- FOOTER (match home page) --- */
+
+/* --- FOOTER --- */
+/* Layout and styles for footer and its links */
 footer {
-    background-color: rgba(249, 243, 243, 0.7);
-    color: rgb(13, 12, 12);
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 150px;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between; /* space out the 3 parts */
+  align-items: center;            /* align vertically */
+  background-color: #f9f9f9;
+  padding: 20px 40px;
+  flex-wrap: wrap;                /* allows wrapping on small screens */
 }
 
+/* Footer links in a row */
 .footer-links {
-    display: flex;
-    gap: 30px;
+  display: flex;
+  gap: 15px;
 }
 
-.footer-links img {
-    width: 30px;
-    height: 30px;
+.footer-links a {
+  color: black;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: large;
 }
 
-/* --------------------------
-   BASE STYLES (Desktop)
-   -------------------------- */
-body {
-  font-family: Arial, sans-serif;
-  font-size: 16px;
+.footer-links a:hover {
+  color: #0077b5;
 }
 
-/* Desktop layouts already set in your CSS */
-
-/* --------------------------
-   Tablet Styles (768px - 1023px)
-   -------------------------- */
-@media (max-width: 1023px) {
+/* ---------- TABLETS (max-width: 1024px) ---------- */
+@media (max-width: 1024px) {
+  /* Navigation */
   nav {
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
     padding: 15px 30px;
+    gap: 10px;
   }
 
   .header-links {
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
     font-size: 18px;
   }
 
-  .contact-forms {
+  .social-icons {
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  /* Gallery */
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px 50px 60px;
+    gap: 20px;
+  }
+
+  .gallery-grid img {
+    height: 250px;
+  }
+
+  /* Footer */
+  footer {
     flex-direction: column;
-    gap: 25px;
+    text-align: center;
+    gap: 15px;
+    padding: 20px 20px;
   }
 
-  .form-box {
-    width: 100%;
-    padding: 25px;
-  }
-
-  .what-i-love {
-    height: 350px;
-  }
-
-  .love-content h1 {
-    font-size: 2.5rem;
-  }
-
-  .love-content p {
-    font-size: 1.1rem;
+  .footer-links {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
   }
 }
 
-/* --------------------------
-   Mobile Styles (up to 767px)
-   -------------------------- */
-@media (max-width: 767px) {
+/* ---------- MOBILE (max-width: 600px) ---------- */
+@media (max-width: 600px) {
+  /* Navigation */
   nav {
-    flex-direction: column;
-    align-items: flex-start;
     padding: 10px 15px;
+    gap: 8px;
   }
 
   .header-links {
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
     font-size: 16px;
   }
 
   .social-icons {
-    justify-content: flex-start;
+    margin-top: 8px;
+  }
+
+  /* Gallery */
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    padding: 15px;
     gap: 15px;
   }
 
-  .contact-forms {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .form-box {
+  .gallery-grid img {
     width: 100%;
-    padding: 20px;
+    height: auto;
   }
 
-  .what-i-love {
-    height: 300px;
+  /* Footer */
+  footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+    padding: 15px 15px;
   }
 
-  .love-content h1 {
-    font-size: 2rem;
+  .footer-links {
+    flex-direction: column;
+    gap: 8px;
   }
 
-  .love-content p {
-    font-size: 1rem;
+  .footer-links a {
+    font-size: 16px;
+  }
+
+  /* Gallery intro padding adjustment */
+  .gallery-intro {
+    padding: 80px 15px 15px 15px;
+    font-size: 18px;
   }
 }

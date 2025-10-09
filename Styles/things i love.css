@@ -1,41 +1,17 @@
 /* --- RESET --- */
+/* Resets box-sizing, margin, and padding for all elements */
+
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.social-icons a {
-    font-size: 30px;
-    margin: 0 10px;
-    text-decoration: none;
-    transition: transform 0.3s;
-}
-
-.social-icons a:hover {
-    transform: scale(1.2); /* grows slightly on hover */
-}
-
-/* Brand colors */
-.instagram { color: #E4405F; }   /* Instagram pink */
-.telegram { color: #0088cc; }    /* Telegram blue */
-.github { color: #333; }         /* GitHub black */
-.email { color: #D44638; }       /* Gmail red */
-.linkedin { color: #0077b5; }    /* LinkedIn blue */
-
-
-/* --- GLOBAL --- */
-body {
-  background-image: url('../images/background.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  font-family: Arial, sans-serif;
-  color: black;
-}
-
-/* --- NAV (exactly same as home) --- */
+/* --- NAVIGATION --- */
+/* Styles for the navigation bar and header links */
 nav {
+  position:sticky;
+  top:0;
   background-color: black;
   color: white;
   display: flex;
@@ -50,36 +26,61 @@ nav {
   font-size: 20px;
 }
 
-.social-links {
-  display: flex;
-  gap: 20px;
-  font-size: 20px;
-}
-
-
-
 a {
   color: white;
   text-decoration: none;
 }
+/* Header links */
+.header-links a:link { color: white; }
+.header-links a:visited { color: pink ; }
+.header-links a:hover { color: grey; }
+.header-links a:active { color:yellow }
 
-a:hover {
-  color: rgb(135, 132, 132);
-  text-decoration: underline;
-}
-/* --- HEADER --- */
-header {
-    text-align: center;
-    padding: 50px 20px 30px 20px;
+/* --- SOCIAL ICONS --- */
+/* Styles for social media icons and their brand colors */
+.social-icons a i {
+    font-size: 30px;
+    margin: 0 10px;
 }
 
-header h1 {
-    font-size: 50px;
-    margin-bottom: 10px;
+.social-icons a:hover i {
+    transform: scale(1.5);
 }
+
+/* Brand colors for social icons */
+.instagram { color: #E4405F; }
+.telegram { color: #0088cc; }
+.github { color: #333; }
+.email { color: #D44638; }
+.linkedin { color: #0077b5; }
+
+/* --- BODY & TYPOGRAPHY --- */
+/* Background image and font settings for the body */
+body {
+  background-image: url('../images/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: Arial, sans-serif;
+  font-size: medium;
+  font-weight: 400;
+  line-height: normal;
+  color: black;
+}
+
+/* --- HEADINGS --- */
+/* Styles for main heading */
+h1 {
+  text-align: center;
+  padding: 40px 0;
+  font-size: 45px;
+  text-transform: uppercase
+}
+
 
 header p {
     font-size: 20px;
+    padding-left: 15%;
 }
 
 /* --- CARDS --- */
@@ -129,114 +130,159 @@ main {
 }
 
 /* --- FOOTER --- */
+/* Layout and styles for footer and its links */
 footer {
-    background-color: rgba(249,243,243,0.7);
-    color: rgb(13,12,12);
-    padding: 20px 150px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between; /* space out the 3 parts */
+  align-items: center;            /* align vertically */
+  background-color: #f9f9f9;
+  padding: 20px 40px;
+  flex-wrap: wrap;                /* allows wrapping on small screens */
 }
 
+/* Footer links in a row */
 .footer-links {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 15px;
 }
 
-.footer-links img {
-    width: 30px;
-    height: 30px;
-}
-/* --------------------------
-   BASE STYLES (Desktop)
-   -------------------------- */
-body {
-  font-family: Arial, sans-serif;
-  font-size: 16px;
+.footer-links a {
+  color: black;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: large;
 }
 
-/* Desktop layouts already set in your CSS */
+.footer-links a:hover {
+  color: #0077b5;
+}
 
-/* --------------------------
-   Tablet Styles (768px - 1023px)
-   -------------------------- */
-@media (max-width: 1023px) {
+/* ---------- TABLET (max-width: 1024px) ---------- */
+@media (max-width: 1024px) {
   nav {
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
     padding: 15px 30px;
+    gap: 10px;
   }
 
   .header-links {
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
     font-size: 18px;
   }
 
-  .contact-forms {
+  header p {
+    padding-left: 10%;
+    font-size: 18px;
+  }
+
+  main {
+    padding: 20px 80px;
+    gap: 30px;
+  }
+
+  .love-card {
     flex-direction: column;
-    gap: 25px;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
   }
 
-  .form-box {
+  .love-card .text {
+    padding-right: 0;
+  }
+
+  .love-card .text h2 {
+    font-size: 24px;
+  }
+
+  .love-card .text p {
+    font-size: 16px;
+  }
+
+  .love-card .image img {
     width: 100%;
-    padding: 25px;
+    max-width: 300px;
+    height: auto;
   }
 
-  .what-i-love {
-    height: 350px;
+  footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
   }
 
-  .love-content h1 {
-    font-size: 2.5rem;
-  }
-
-  .love-content p {
-    font-size: 1.1rem;
+  .footer-links {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
   }
 }
 
-/* --------------------------
-   Mobile Styles (up to 767px)
-   -------------------------- */
-@media (max-width: 767px) {
+/* ---------- MOBILE (max-width: 600px) ---------- */
+@media (max-width: 600px) {
   nav {
     flex-direction: column;
-    align-items: flex-start;
-    padding: 10px 15px;
+    padding: 10px 20px;
+    gap: 8px;
   }
 
   .header-links {
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
     font-size: 16px;
   }
 
-  .social-icons {
-    justify-content: flex-start;
-    gap: 15px;
+  header p {
+    padding-left: 5%;
+    font-size: 16px;
   }
 
-  .contact-forms {
+  h1 {
+    font-size: 28px;
+    padding: 20px 0;
+  }
+
+  main {
+    padding: 15px 20px;
+    gap: 25px;
+  }
+
+  .love-card {
     flex-direction: column;
-    gap: 20px;
+    text-align: center;
+    gap: 12px;
+    padding: 15px;
   }
 
-  .form-box {
+  .love-card .text h2 {
+    font-size: 22px;
+  }
+
+  .love-card .text p {
+    font-size: 14px;
+  }
+
+  .love-card .image img {
     width: 100%;
-    padding: 20px;
+    height: auto;
+    max-width: 250px;
   }
 
-  .what-i-love {
-    height: 300px;
+  footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+    padding: 15px 20px;
   }
 
-  .love-content h1 {
-    font-size: 2rem;
+  .footer-links {
+    flex-direction: column;
+    gap: 8px;
   }
 
-  .love-content p {
-    font-size: 1rem;
+  .footer-links a {
+    font-size: 16px;
   }
 }
-
-
