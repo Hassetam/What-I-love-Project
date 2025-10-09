@@ -1,50 +1,49 @@
 /* --- RESET --- */
 /* Resets box-sizing, margin, and padding for all elements */
-
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  box-sizing: border-box; /* Ensures padding and border are included in element width/height */
+  margin: 0;              /* Remove default margin */
+  padding: 0;             /* Remove default padding */
 }
 
 /* --- NAVIGATION --- */
 /* Styles for the navigation bar and header links */
 nav {
-  position:sticky;
-  top:0;
+  position: sticky;       /* Makes the navbar stick at the top when scrolling */
+  top: 0;                 /* Position at the very top */
   background-color: black;
   color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: flex;          /* Arrange children in a row */
+  justify-content: space-between; /* Space out navigation links and social icons */
+  align-items: center;    /* Vertically center align items */
   padding: 12px 50px;
 }
 
 .header-links {
-  display: flex;
-  gap: 30px;
+  display: flex;          /* Horizontal layout for links */
+  gap: 30px;              
   font-size: 20px;
 }
 
 a {
   color: white;
-  text-decoration: none;
+  text-decoration: none;  /* Removes underline */
 }
-/* Header links */
-.header-links a:link { color: white; }
-.header-links a:visited { color: pink ; }
-.header-links a:hover { color: grey; }
-.header-links a:active { color:yellow }
+/* Header link states */
+.header-links a:link { color: white; }   /* Default link color */
+.header-links a:visited { color: pink ;} /* Color for visited links */
+.header-links a:hover { color: grey; }   /* Hover color */
+.header-links a:active { color: yellow } /* Active/clicked color */
 
 /* --- SOCIAL ICONS --- */
-/* Styles for social media icons and their brand colors */
+/* Styles for social media icons */
 .social-icons a i {
     font-size: 30px;
-    margin: 0 10px;
+    margin: 0 10px;       /* Horizontal spacing between icons */
 }
 
 .social-icons a:hover i {
-    transform: scale(1.5);
+    transform: scale(1.5); /* Enlarge icon when hovered */
 }
 
 /* Brand colors for social icons */
@@ -55,12 +54,11 @@ a {
 .linkedin { color: #0077b5; }
 
 /* --- BODY & TYPOGRAPHY --- */
-/* Background image and font settings for the body */
 body {
-  background-image: url('../images/background.jpg');
-  background-size: cover;
+  background-image: url('../images/background.jpg'); /* Page background */
+  background-size: cover;       /* Cover full screen */
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center;  /* Center image */
   font-family: Arial, sans-serif;
   font-size: medium;
   font-weight: 400;
@@ -69,92 +67,93 @@ body {
 }
 
 /* --- HEADINGS --- */
-/* Styles for main heading */
 h1 {
   text-align: center;
   padding: 40px 0;
   font-size: 45px;
-  text-transform: uppercase
+  text-transform: uppercase;    /* Uppercase letters */
 }
 
 /* --- HOME CONTAINER --- */
-/* Layout for main content sections */
+/* Main content wrapper using flexbox layout */
 .home-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 100px;
-  gap: 10px;
+  display: flex;                /* Layout children horizontally */
+  justify-content: space-between; /* Space between left and right content */
+  align-items: flex-start;      /* Align top of left and right content */
+  padding: 100px;               /* Space around container */
+  gap: 10px;                    /* Gap between flex children */
 }
 
-
+/* --- LEFT CONTENT --- */
 .left-content {
-  flex: 1.2;
+  flex: 1.2;                    /* Relative width compared to right-content */
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  flex-direction: column;        /* Stack child elements vertically */
+  gap: 20px;                     /* Vertical spacing between child elements */
 }
 
 .left-content .one {
-  font-size: 30px;
+  font-size: 30px;               /* Big heading */
 }
 
 .left-content .two, .left-content .three {
-  font-size: 20px;
-  line-height: 1.6;
+  font-size: 20px;               /* Paragraph text */
+  line-height: 1.6;              /* Vertical spacing between lines */
 }
 
-
+/* --- RIGHT CONTENT --- */
 .right-content {
-  flex: 1.5;
-  text-align: center;
+  flex: 1.5;                    /* Wider than left-content */
+  text-align: center;            /* Center align text */
 }
 
-
+/* Slider arrow below text */
 .slider {
   font-size: 20px;
   margin-bottom: 10px;
 }
-.slider::after{
-  content:'👇'
+.slider::after {
+  content: '👇';                 /* Adds a downward pointing emoji after slider text */
 }
 
 /* --- SLIDESHOW --- */
-/* Styles and animations for image slideshow */
+/* Container for rotating images */
 .slideshow {
   position: relative;
   width: 100%;
   height: 450px;
-  perspective: 1000px;
+  perspective: 1000px;           /* Adds 3D perspective for any transforms */
   border-radius: 10px;
-  overflow:hidden;
+  overflow: hidden;               /* Hide overflowing images */
 }
 
 .slides {
-  position: relative;
+  position: relative;             /* Contains the absolute positioned images */
   width: 100%;
   height: 100%;
 }
 
-
 .page {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  animation: fade 16s infinite;
+  position: absolute;             
+  /* Absolutely positions each slide inside the slideshow container so that all slides
+     overlap each other perfectly, allowing us to fade them in/out on top of each other */
+  width: 100%;                     /* Take the full width of the parent slideshow container */
+  height: 100%;                    /* Take the full height of the parent container */
+  opacity: 0;                      /* Initially invisible, so only the first slide will appear when animation starts */
+  animation: fade 16s infinite;    /* Apply the 'fade' animation that lasts 16 seconds and repeats indefinitely */
 }
 
 .page img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* prevents cutting */
-  border-radius: 10px;
+  width: 100%;                     /* Make the image fill the slide container horizontally */
+  height: 100%;                    /* Make the image fill the slide container vertically */
+  object-fit: contain;             /* Ensure the entire image fits inside the container without being cropped or distorted */
+  border-radius: 10px;             
 }
 
-/* Stagger animation for each image */
-.slideshow .page:nth-child(1) { animation-delay: 0s; }
-.slideshow .page:nth-child(2) { animation-delay: 2s; }
+/* Stagger animation delays for each slide to create a continuous slideshow effect */
+/* Each slide starts fading at a different time so that only one slide is fully visible at a time */
+.slideshow .page:nth-child(1) { animation-delay: 0s; }   /* First slide starts immediately */
+.slideshow .page:nth-child(2) { animation-delay: 2s; }   /* Second slide starts 2s later */
 .slideshow .page:nth-child(3) { animation-delay: 4s; }
 .slideshow .page:nth-child(4) { animation-delay: 6s; }
 .slideshow .page:nth-child(5) { animation-delay: 8s; }
@@ -162,28 +161,36 @@ h1 {
 .slideshow .page:nth-child(7) { animation-delay: 12s; }
 .slideshow .page:nth-child(8) { animation-delay: 14s; }
 
-/* Fade in/out animation */
+/* Keyframes define how the fade animation works over time */
 @keyframes fade {
-  0%, 12.5% { opacity: 1; }
-  25%, 100% { opacity: 0; }
+  0%, 12.5% { 
+    opacity: 1;  /* Slide is fully visible for the first 12.5% of its animation duration */
+  }
+  25%, 100% { 
+    opacity: 0;  /* Slide gradually fades out and stays invisible until its next animation cycle */
+  }
 }
+        /* Explanation:
+          - Each slide fades in, stays visible briefly, then fades out.
+          - By staggering the animation-delay for each slide, we create a continuous looping slideshow effect.
+          - opacity controls visibility (0 = invisible, 1 = fully visible)
+          - absolute positioning and overlapping allow smooth transitions between slides
+        */
 
 
 /* --- FOOTER --- */
-/* Layout and styles for footer and its links */
 footer {
-  display: flex;
-  justify-content: space-between; /* space out the 3 parts */
-  align-items: center;            /* align vertically */
+  display: flex;                  /* Arrange content horizontally */
+  justify-content: space-between; /* Space between text, links, and social icons */
+  align-items: center;            /* Vertical alignment */
   background-color: #f9f9f9;
   padding: 20px 40px;
-  flex-wrap: wrap;                /* allows wrapping on small screens */
+  flex-wrap: wrap;                /* Allow wrapping on small screens */
 }
 
-/* Footer links in a row */
 .footer-links {
-  display: flex;
-  gap: 15px;
+  display: flex;                  /* Horizontal links */
+  gap: 15px;                      /* Spacing between links */
 }
 
 .footer-links a {
@@ -194,23 +201,21 @@ footer {
 }
 
 .footer-links a:hover {
-  color: #0077b5;
+  color: #0077b5;                /* Change color on hover */
 }
 
-
 /* --- RESPONSIVE DESIGN --- */
-/* Media queries for tablets and mobile devices */
-/* ---------- Tablets (max-width: 1024px) ---------- */
+/* Tablet view */
 @media (max-width: 1024px) {
   nav {
-    flex-direction: column;
+    flex-direction: column;       /* Stack items vertically */
     align-items: center;
     padding: 20px 40px;
     gap: 10px;
   }
 
   .header-links {
-    flex-wrap: wrap;
+    flex-wrap: wrap;              /* Wrap links if needed */
     justify-content: center;
     gap: 25px;
     font-size: 18px;
@@ -222,7 +227,7 @@ footer {
   }
 
   .home-container {
-    flex-direction: column;
+    flex-direction: column;       /* Stack left and right content vertically */
     align-items: center;
     gap: 50px;
     padding: 80px 60px;
@@ -246,7 +251,7 @@ footer {
   }
 
   footer {
-    flex-direction: column;
+    flex-direction: column;       /* Stack footer items vertically */
     text-align: center;
     gap: 20px;
     padding: 30px 20px;
@@ -260,8 +265,7 @@ footer {
   }
 }
 
-
-/* ---------- Mobile (max-width: 600px) ---------- */
+/* Mobile view */
 @media (max-width: 600px) {
   nav {
     flex-direction: column;
@@ -328,10 +332,10 @@ footer {
   .social-icons a i {
     font-size: 22px;
     margin: 0 6px;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease; /* Smooth scaling on hover */
   }
 
   .social-icons a:hover i {
-    transform: scale(1.2);
+    transform: scale(1.2); /* Slightly enlarge icons on hover */
   }
 }

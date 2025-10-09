@@ -1,6 +1,5 @@
 /* --- RESET --- */
-/* Resets box-sizing, margin, and padding for all elements */
-
+/* Resets default browser spacing and ensures consistent box sizing for all elements */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,10 +7,10 @@
 }
 
 /* --- NAVIGATION --- */
-/* Styles for the navigation bar and header links */
+/* Styles the top navigation bar with sticky positioning, black background, and evenly spaced links */
 nav {
-  position:sticky;
-  top:0;
+  position: sticky;
+  top: 0;
   background-color: black;
   color: white;
   display: flex;
@@ -20,34 +19,38 @@ nav {
   padding: 12px 50px;
 }
 
+/* Header links section inside the nav bar */
 .header-links {
   display: flex;
   gap: 30px;
   font-size: 20px;
 }
 
+/* --- LINK STYLES --- */
+/* Removes underlines and sets colors for different link states */
 a {
   color: white;
   text-decoration: none;
 }
-/* Header links */
+
 .header-links a:link { color: white; }
-.header-links a:visited { color: pink ; }
+.header-links a:visited { color: pink; }
 .header-links a:hover { color: grey; }
-.header-links a:active { color:yellow }
+.header-links a:active { color: yellow; }
 
 /* --- SOCIAL ICONS --- */
-/* Styles for social media icons and their brand colors */
+/* Controls the size and spacing of social media icons */
 .social-icons a i {
-    font-size: 30px;
-    margin: 0 10px;
+  font-size: 30px;
+  margin: 0 10px;
 }
 
+/* Enlarge icons slightly when hovered */
 .social-icons a:hover i {
-    transform: scale(1.5);
+  transform: scale(1.5);
 }
 
-/* Brand colors for social icons */
+/* Assign brand colors for each icon */
 .instagram { color: #E4405F; }
 .telegram { color: #0088cc; }
 .github { color: #333; }
@@ -55,7 +58,7 @@ a {
 .linkedin { color: #0077b5; }
 
 /* --- BODY & TYPOGRAPHY --- */
-/* Background image and font settings for the body */
+/* Applies a full background image, base font, and text color */
 body {
   background-image: url('../images/background.jpg');
   background-size: cover;
@@ -69,78 +72,82 @@ body {
 }
 
 /* --- HEADINGS --- */
-/* Styles for main heading */
+/* Centers the main heading and adds spacing */
 h1 {
   text-align: center;
   padding: 40px 0;
   font-size: 45px;
-  text-transform: uppercase
+  text-transform: uppercase;
 }
 
-
+/* Subtitle under the header */
 header p {
-    font-size: 20px;
-    padding-left: 15%;
+  font-size: 20px;
+  padding-left: 15%;
 }
 
-/* --- CARDS --- */
+/* --- MAIN CONTENT (CARDS) --- */
+/* Layout for the main section with padding and vertical spacing between cards */
 main {
-    padding: 20px 150px;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+  padding: 20px 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
+/* Each card container: holds text and image side by side */
 .love-card {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: rgb(253, 222, 242); /* changed from rgba to pure white */
-    border-radius: 10px;
-    padding: 20px;
-    gap: 10px; /* decreased the gap between text and image */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(253, 222, 242);
+  border-radius: 10px;
+  padding: 20px;
+  gap: 10px;
 }
 
+/* Text area of the card */
 .love-card .text {
-    flex: 1;
-    padding-right: 10px; /* decreased right padding */
+  flex: 1;
+  padding-right: 10px;
 }
 
 .love-card .text h2 {
-    font-size: 28px;
-    margin-bottom: 10px;
+  font-size: 28px;
+  margin-bottom: 10px;
 }
 
 .love-card .text p {
-    font-size: 18px;
+  font-size: 18px;
 }
 
+/* Image section of the card */
 .love-card .image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .love-card .image img {
-    width: 350px;
-    height: 250px;
-    object-fit: contain;
-    border-radius: 10px;
+  width: 350px;
+  height: 250px;
+  object-fit: contain;
+  border-radius: 10px;
 }
 
 /* --- FOOTER --- */
-/* Layout and styles for footer and its links */
+/* Displays footer content in a row and evenly distributes the sections */
 footer {
   display: flex;
-  justify-content: space-between; /* space out the 3 parts */
-  align-items: center;            /* align vertically */
+  justify-content: space-between;
+  align-items: center;
   background-color: #f9f9f9;
   padding: 20px 40px;
-  flex-wrap: wrap;                /* allows wrapping on small screens */
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
 }
 
-/* Footer links in a row */
+/* Footer links layout */
 .footer-links {
   display: flex;
   gap: 15px;
@@ -157,14 +164,20 @@ footer {
   color: #0077b5;
 }
 
-/* ---------- TABLET (max-width: 1024px) ---------- */
+/* --- MEDIA QUERIES --- */
+/* TABLET VIEW */
+/* Applies to screens up to 1024px wide */
+
 @media (max-width: 1024px) {
+
+  /* Navigation: stack links vertically and center them */
   nav {
-    flex-direction: column;
+    flex-direction: column; /* moves header elements downward */
     padding: 15px 30px;
     gap: 10px;
   }
 
+  /* Wraps header links for better readability */
   .header-links {
     flex-wrap: wrap;
     justify-content: center;
@@ -172,16 +185,19 @@ footer {
     font-size: 18px;
   }
 
+  /* Adjusts subtitle size and spacing */
   header p {
     padding-left: 10%;
     font-size: 18px;
   }
 
+  /* Narrows padding and spacing between cards */
   main {
     padding: 20px 80px;
     gap: 30px;
   }
 
+  /* Stacks image and text vertically inside each card */
   .love-card {
     flex-direction: column;
     align-items: center;
@@ -189,30 +205,30 @@ footer {
     gap: 15px;
   }
 
+  /* Removes extra padding on smaller screens */
   .love-card .text {
     padding-right: 0;
   }
 
-  .love-card .text h2 {
-    font-size: 24px;
-  }
+  /* Slightly smaller text sizes for better fit */
+  .love-card .text h2 { font-size: 24px; }
+  .love-card .text p { font-size: 16px; }
 
-  .love-card .text p {
-    font-size: 16px;
-  }
-
+  /* Makes image smaller and fully responsive */
   .love-card .image img {
     width: 100%;
     max-width: 300px;
     height: auto;
   }
 
+  /* Footer stacks vertically and centers content */
   footer {
     flex-direction: column;
     text-align: center;
     gap: 15px;
   }
 
+  /* Footer links wrap neatly and stay centered */
   .footer-links {
     justify-content: center;
     flex-wrap: wrap;
@@ -220,35 +236,48 @@ footer {
   }
 }
 
-/* ---------- MOBILE (max-width: 600px) ---------- */
+
+/* MOBILE VIEW  */
+/* Applies to screens up to 600px wide */
+
+
 @media (max-width: 600px) {
+
+  /* Navigation becomes fully vertical and compact */
   nav {
-    flex-direction: column;
+    flex-direction: column; /* places header downward */
+    justify-content: center;
+    align-items: flex-start;
     padding: 10px 20px;
     gap: 8px;
   }
 
+  /* Header links are stacked vertically for easy tapping */
   .header-links {
     flex-direction: column;
     gap: 8px;
     font-size: 16px;
   }
 
+  /* Makes header text smaller and closer to the edge */
   header p {
     padding-left: 5%;
     font-size: 16px;
   }
 
+  /* Shrinks main title for small screens */
   h1 {
     font-size: 28px;
     padding: 20px 0;
   }
 
+  /* Reduces overall page padding */
   main {
     padding: 15px 20px;
     gap: 25px;
   }
 
+  /* Each love-card stacks text and image vertically */
   .love-card {
     flex-direction: column;
     text-align: center;
@@ -256,20 +285,18 @@ footer {
     padding: 15px;
   }
 
-  .love-card .text h2 {
-    font-size: 22px;
-  }
+  /* Reduces text sizes for better fit */
+  .love-card .text h2 { font-size: 22px; }
+  .love-card .text p { font-size: 14px; }
 
-  .love-card .text p {
-    font-size: 14px;
-  }
-
+  /* Makes images flexible and smaller */
   .love-card .image img {
     width: 100%;
     height: auto;
     max-width: 250px;
   }
 
+  /* Footer becomes vertical and centered */
   footer {
     flex-direction: column;
     text-align: center;
@@ -277,6 +304,7 @@ footer {
     padding: 15px 20px;
   }
 
+  /* Footer links are stacked for easier tapping */
   .footer-links {
     flex-direction: column;
     gap: 8px;

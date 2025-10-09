@@ -1,79 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
+    <meta charset="UTF-8"> <!-- Sets character encoding for the page to UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures responsive design on mobile devices -->
+    <title>About Me</title> <!-- Title of the page shown in browser tab -->
+
+    <!-- Link to external CSS file for page styles -->
     <link rel="stylesheet" href="Styles/about me.css">
+    
+    <!-- Font Awesome icons for social media links -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" >
+
+    <!-- Google Fonts for typography -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap">
 </head>
 <body>
+    <!-- --- NAVIGATION BAR --- -->
     <nav>
+        <!-- Main navigation links -->
         <span class="header-links">
-            <a href="index.html">Home</a>
-            <a href="about me.html">About Me</a>
+            <a href="index.html">Home</a> 
+            <a href="about me.html">About Me</a> 
             <a href="things i love.html">Things I Love</a>
             <a href="gallery.html">Gallery</a>
             <a href="contact.html">Contact</a>
         </span>
-       <div class="social-icons">
-        <a href="https://www.instagram.com/hassuki.15" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://t.me/mamaa15" target="_blank" class="telegram"><i class="fab fa-telegram-plane"></i></a>
-        <a href="https://github.com/Hassetam" target="_blank" class="github"><i class="fab fa-github"></i></a>
-        <a href="mailto:adugnahasset@gmail.com" class="email"><i class="fas fa-envelope"></i></a>
-        <a href="https://www.linkedin.com/in/hasset-maemer-909b4a376/" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
-    </div>
+
+        <!-- Social media icons on the right -->
+        <div class="social-icons">
+            <a href="https://www.instagram.com/hassuki.15" target="_blank" class="instagram">
+                <i class="fab fa-instagram"></i> 
+            </a>
+            <a href="https://t.me/mamaa15" target="_blank" class="telegram">
+                <i class="fab fa-telegram-plane"></i> 
+            </a>
+            <a href="https://github.com/Hassetam" target="_blank" class="github">
+                <i class="fab fa-github"></i> 
+            </a>
+            <a href="mailto:adugnahasset@gmail.com" class="email">
+                <i class="fas fa-envelope"></i> 
+            </a>
+            <a href="https://www.linkedin.com/in/hasset-maemer-909b4a376/" target="_blank" class="linkedin">
+                <i class="fab fa-linkedin-in"></i> 
+            </a>
+        </div>
     </nav>
 
+    <!-- Main page heading -->
     <h1>About Me</h1>
 
-    <main class="about-container">
+    <!-- --- MAIN CONTENT --- -->
+    <main class="about-container">   <!-- Vertical timeline line in center -->
         <div class="timeline-line"></div>
 
+        <!-- Right-aligned timeline card -->
         <section class="about-card right-card">
-            <div class="circle"></div>
-            <p>Hi, I'm Hasset. I love life most when it truly feels alive. I enjoy being around people, and I feel proud when I try new things. I started this project to share the things I love and the moments that make me say, “life is worth living.”</p>
+            <div class="circle"></div> <!-- Timeline circle marker -->
+            <p>
+                Hi, I'm Hasset. I love life most when it truly feels alive. I enjoy being around people, and I feel proud when I try new things. I started this project to share the things I love and the moments that make me say, “life is worth living.”
+            </p>
         </section>
 
+        <!-- Left-aligned timeline card -->
         <section class="about-card left-card">
             <div class="circle"></div>
-            <p>I'm a student, and this is my first website built with just HTML and CSS. I'd describe myself as having an eldest-daughter personality: caring, responsible, but also full of contradictions. I don't live in the middle ground. I can be loud or quiet, serious or funny, a perfectionist, or someone who just doesn't care.</p>
+            <p>
+                I'm a student, and this is my first website built with just HTML and CSS. I'd describe myself as having an eldest-daughter personality: caring, responsible, but also full of contradictions. I don't live in the middle ground. I can be loud or quiet, serious or funny, a perfectionist, or someone who just doesn't care.
+            </p>
         </section>
 
+        <!-- Right-aligned card again -->
         <section class="about-card right-card">
             <div class="circle"></div>
-            <p>People often meet the quiet version of me first, but give it time, and you'll discover the joy of the group.</p>
+            <p>
+                People often meet the quiet version of me first, but give it time, and you'll discover the joy of the group.
+            </p>
         </section>
 
+        <!-- Left-aligned card encouraging user to explore more -->
         <section class="about-card left-card">
             <div class="circle"></div>
-            <p>Now that you know me a little better, explore the things I love and see what makes life exciting for me.</p>
+            <p>
+                Now that you know me a little better, explore the things I love and see what makes life exciting for me.
+            </p>
         </section>
 
+        <!-- Full-width card with clickable image leading to gallery -->
         <section class="about-card full-image-card">
             <div class="card-left">
+                <!-- Definition list used for small preview text -->
                 <dl>
-                    <dt>Sneak Peek: </dt>
-                    <dd>I love movies and you might get some recommendations</dd>
+                    <dt>Sneak Peek: </dt> <!-- Term/title -->
+                    <dd>I love movies and you might get some recommendations</dd> <!-- Description -->
                 </dl>
             </div>
             <div class="card-right">
+                <!-- Text above image -->
                 <p class="image-text">Click the picture if you want to see</p>
+                <!-- Clickable image linking to gallery page -->
                 <a href="gallery.html" class="image-button">
-                    <img src="images/button.jpg" alt="Gallery Image">
+                    <img src="images/button.jpg" alt="Gallery Image"> <!-- Image inside the button -->
                 </a>
             </div>
         </section>
-            </main>
+    </main>
 
-    <!-- Footer with copyright and social icons-->
-   <footer>
+    <!-- --- FOOTER --- -->
+    <footer>
+        <!-- Copyright notice -->
         <div class="footer-text">
             &copy; 2025 Hasset Maemer. All rights reserved.
         </div>
 
+        <!-- Footer navigation links -->
         <div class="footer-links">
             <a href="index.html">Home</a>
             <a href="about me.html">About Me</a>
@@ -82,6 +122,7 @@
             <a href="contact.html">Contact</a>
         </div>
 
+        <!-- Social media icons repeated in footer for accessibility -->
         <div class="social-icons">
             <a href="https://www.instagram.com/hassuki.15" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
             <a href="https://t.me/mamaa15" target="_blank" class="telegram"><i class="fab fa-telegram-plane"></i></a>
@@ -89,6 +130,7 @@
             <a href="mailto:adugnahasset@gmail.com" class="email"><i class="fas fa-envelope"></i></a>
             <a href="https://www.linkedin.com/in/hasset-maemer-909b4a376/" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
         </div>
-</footer>
+    </footer>
 </body>
 </html>
+

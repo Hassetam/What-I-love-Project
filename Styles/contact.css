@@ -1,199 +1,228 @@
 /* --- RESET --- */
-/* Resets box-sizing, margin, and padding for all elements */
-
+/* Resets default browser styles for consistency */
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  box-sizing: border-box; /* Include padding and border in total element width/height */
+  margin: 0;              /* Remove all default margins */
+  padding: 0;             /* Remove all default paddings */
 }
 
 /* --- NAVIGATION --- */
-/* Styles for the navigation bar and header links */
+/* Styles for the top navigation bar */
 nav {
-  position:sticky;
-  top:0;
-  background-color: black;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 50px;
-  z-index: 1000;
+  position: sticky;      /* Keeps nav bar visible at top during scroll */
+  top: 0;                /* Stick to the very top */
+  background-color: black; /* Black background */
+  color: white;          /* White text color */
+  display: flex;         /* Use flexbox for layout */
+  justify-content: space-between; /* Space between left and right sections */
+  align-items: center;   /* Vertically align items */
+  padding: 12px 50px;    /* Space inside the nav bar */
+  z-index: 1000;         /* Keep nav above other elements */
 }
 
+/* Container for header links */
 .header-links {
-  display: flex;
-  gap: 30px;
-  font-size: 20px;
+  display: flex;         /* Arrange links horizontally */
+  gap: 30px;             /* Space between links */
+  font-size: 20px;       /* Slightly larger font */
 }
 
+/* Link styles (base and interactive states) */
 a {
-  color: white;
-  text-decoration: none;
+  color: white;          /* Default color for links */
+  text-decoration: none; /* Remove underlines */
 }
-/* Header links */
-.header-links a:link { color: white; }
-.header-links a:visited { color: pink ; }
-.header-links a:hover { color: grey; }
-.header-links a:active { color:yellow }
+.header-links a:link { color: white; }   /* Normal link color */
+.header-links a:visited { color: pink; } /* Color for visited links */
+.header-links a:hover { color: grey; }   /* Color on hover */
+.header-links a:active { color: yellow; }/* Color when active/clicked */
 
 /* --- SOCIAL ICONS --- */
-/* Styles for social media icons and their brand colors */
+/* Adjust icon size and spacing */
 .social-icons a i {
-    font-size: 30px;
-    margin: 0 10px;
+    font-size: 30px;   /* Icon size */
+    margin: 0 10px;    /* Space around each icon */
 }
 
+/* Slight zoom on hover */
 .social-icons a:hover i {
-    transform: scale(1.5);
+    transform: scale(1.5); /* Enlarge icon slightly */
 }
 
-/* Brand colors for social icons */
-.instagram { color: #E4405F; }
-.telegram { color: #0088cc; }
-.github { color: #333; }
-.email { color: #D44638; }
-.linkedin { color: #0077b5; }
+/* Specific brand colors for each platform */
+.instagram { color: #E4405F; } /* Instagram pink-red */
+.telegram { color: #0088cc; }  /* Telegram blue */
+.github { color: #333; }       /* GitHub gray */
+.email { color: #D44638; }     /* Email red */
+.linkedin { color: #0077b5; }  /* LinkedIn blue */
 
 /* --- BODY & TYPOGRAPHY --- */
-/* Background image and font settings for the body */
+/* Sets the page background and base text properties */
 body {
-  background-image: url('../images/background.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  font-family: Arial, sans-serif;
-  font-size: medium;
-  font-weight: 400;
-  line-height: normal;
-  color: black;
+  background-image: url('../images/background.jpg'); /* Background image path */
+  background-size: cover;        /* Image covers entire area */
+  background-repeat: no-repeat;  /* Prevent repetition */
+  background-position: center;   /* Center the image */
+  font-family: Arial, sans-serif;/* Basic font stack */
+  font-size: medium;             /* Default readable size */
+  font-weight: 400;              /* Normal weight */
+  line-height: normal;           /* Standard spacing between lines */
+  color: black;                  /* Default text color */
 }
 
-
 /* --- PAGE TITLE --- */
+/* Main title heading */
 h1 {
-  text-align: center;
-  padding: 40px 0;
-  font-size: 50px;
-  color: black;
+  text-align: center;   /* Centered text */
+  padding: 40px 0;      /* Vertical spacing above and below */
+  font-size: 50px;      /* Large headline */
+  color: black;         /* Black color */
 }
 
 /* --- SOCIAL MEDIA SECTIONS --- */
+/* Layout container for social icons and right content */
 .social-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 40px 300px 100px 250px;
-  flex-wrap: wrap;
-  gap: 0px;
+  display: flex;                      /* Flex layout for two sides */
+  justify-content: space-between;     /* Space between sections */
+  align-items: flex-start;            /* Align items at top */
+  padding: 40px 300px 100px 250px;    /* Inside spacing */
+  flex-wrap: wrap;                    /* Wrap on smaller screens */
 }
+
+/* Left column for social items */
 .social-side {
-  display: flex;
+  display: flex;          /* Stack items vertically */
   flex-direction: column;
-  gap: 25px;
+  gap: 25px;              /* Space between items */
 }
+
+/* Each social row (icon + text) */
 .social-item {
-  display: flex;
+  display: flex;          /* Align icon and label side by side */
   align-items: center;
-  gap: 15px;
-  font-size: 35px;
-  transition: transform 0.3s ease, color 0.3s ease;
+  gap: 15px;              /* Space between icon and text */
+  font-size: 35px;        /* Large size for clarity */
 }
 
 /* --- CONTACT FORMS --- */
+/* Overall layout for contact section (email + meeting form) */
 .contact-forms {
-  display: flex;
+  display: flex;                  /* Side-by-side layout */
   justify-content: space-between;
   align-items: flex-start;
-  padding: 5% 5%;
-  flex-wrap: wrap;
+  padding: 5% 5%;                /* Responsive spacing */
+  flex-wrap: wrap;               /* Wraps on smaller screens */
 }
+
+/* Email form box */
 .form-box.email-form {
-  flex: 0 0 20%;
-  min-width: 250px;
-  max-width: 320px;
+  flex: 0 0 20%;                 /* Takes 20% width */
+  min-width: 250px;              /* Minimum width limit */
+  max-width: 320px;              /* Maximum width limit */
 }
+
+/* Meeting form box */
 .form-box.meeting-form {
-  flex: 0 0 75%;
+  flex: 0 0 75%;                 /* Takes 75% width */
   min-width: 320px;
 }
 
+/* Form section headings */
 .form-box h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
+  font-size: 28px;               /* Medium-large heading */
+  margin-bottom: 20px;           /* Space below heading */
 }
 
+/* Form layout */
 form {
-  display: flex;
+  display: flex;                 /* Stack inputs vertically */
   flex-direction: column;
-  gap: 15px;
+  gap: 15px;                     /* Even space between fields */
 }
 
 /* --- FORM ELEMENTS --- */
+/* Input and textarea base styles */
 input,
 textarea {
   display: block;
-  width: 100%;
+  width: 100%;                   /* Full width */
   padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #f69bd6;
-  border-radius: 8px;
+  margin-bottom: 15px;           /* Space between fields */
+  border: 1px solid #f69bd6;     /* Light pink border */
+  border-radius: 8px;            /* Rounded corners */
   font-size: 16px;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth focus effect */
 }
+
+/* Focused field highlight */
 input:focus,
 textarea:focus {
-  border-color: #f069c9;
-  box-shadow: 0 0 8px rgba(246, 155, 214, 0.3);
+  border-color: #1d0315;         /* Brighter border on focus */
+  box-shadow: 0 0 8px rgba(246, 155, 214, 0.3); /* Soft glow effect */
   outline: none;
 }
+
+/* Textarea size and non-resizable */
 textarea {
   height: 160px;
   resize: none;
 }
 
 /* --- BUTTON --- */
+/* Form submission button */
 button {
   display: inline-block;
   margin-top: 10px;
   padding: 12px;
   font-size: 18px;
-  background: linear-gradient(to right, #800020, #f8abd6);
+  background: linear-gradient(to right, #e98cc7, #f973bf); /* Pink gradient */
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
 }
+
+/* Hover animation for button */
 button:hover {
-  background: linear-gradient(to right, #eea8da, #ec9ae5);
-  transform: translateY(-2px);
+  background: linear-gradient(to right, grey, black); /* Darker hover gradient */
+  transform: translateY(-2px); /* Slight upward lift */
 }
 
 /* --- MEETING FORM --- */
+/* Container for meeting questions */
 .meeting-form {
   background-color: whitesmoke;
   padding: 50px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 12px; /* Smooth corners */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Soft shadow */
 }
+
+/* Text inside meeting form */
 .meeting-form div {
   font-size: 20px;
   margin-bottom: 20px;
 }
+
+/* Grouping for question blocks */
 .question-block {
   margin-bottom: 24px;
 }
+
+/* Ordered list inside form */
 .meeting-form ol {
   padding-left: 18px;
 }
 
 /* --- CHOICE GROUP --- */
+/* Layout for radio/checkbox options */
 .choice-group {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap;  /* Wrap options to next line if needed */
   gap: 30px;
   margin-bottom: 10px;
 }
+
+/* Labels beside radio/checkbox */
 .choice-group label {
   display: flex;
   align-items: flex-start;
@@ -201,13 +230,15 @@ button:hover {
   font-size: 20px;
   cursor: pointer;
 }
+
+/* Custom radio/checkbox styles */
 .choice-group input[type="radio"],
 .choice-group input[type="checkbox"] {
-  appearance: none;
+  appearance: none;             /* Hide default browser style */
   width: 22px;
   height: 22px;
   border: 2px solid #f69bd6;
-  border-radius: 50%;
+  border-radius: 50%;           /* Circle shape */
   background: #ffffff;
   outline: none;
   cursor: pointer;
@@ -216,6 +247,8 @@ button:hover {
   position: relative;
   transition: border-color 0.2s;
 }
+
+/* Checked state with gradient fill */
 .choice-group input[type="radio"]:checked,
 .choice-group input[type="checkbox"]:checked {
   border-color: #ec9ae5;
@@ -223,49 +256,57 @@ button:hover {
 }
 
 /* --- TABLE STYLING --- */
+/* Styles for meeting schedule or table content */
 .meeting-form table {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
   border-radius: 10px;
-  overflow: hidden;
+  overflow: hidden; /* Keeps rounded corners visible */
   margin-top: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Soft depth shadow */
 }
+
+/* Table cells and headers */
 .meeting-form th,
 .meeting-form td {
   padding: 12px;
   text-align: center;
 }
+
+/* Table header row */
 .meeting-form th {
   background: linear-gradient(to right, #f6bbed, #f8aee8);
   color: white;
   font-weight: 600;
 }
+
+/* Alternating row colors for readability */
 .meeting-form tr:nth-child(even) {
-  background-color: rgba(246, 187, 237, 0.2);
+  background-color: rgba(194, 93, 179, 0.2);
 }
 .meeting-form tr:nth-child(odd) {
   background-color: rgba(246, 187, 237, 0.1);
 }
 
 /* --- FOOTER --- */
-/* Layout and styles for footer and its links */
+/* Layout and visual style for footer */
 footer {
   display: flex;
-  justify-content: space-between; /* space out the 3 parts */
-  align-items: center;            /* align vertically */
+  justify-content: space-between; /* Spread out sections */
+  align-items: center;
   background-color: #f9f9f9;
   padding: 20px 40px;
-  flex-wrap: wrap;                /* allows wrapping on small screens */
+  flex-wrap: wrap; /* Wrap on small screens */
 }
 
-/* Footer links in a row */
+/* Footer navigation links */
 .footer-links {
   display: flex;
   gap: 15px;
 }
 
+/* Footer link appearance */
 .footer-links a {
   color: black;
   text-decoration: none;
@@ -273,114 +314,140 @@ footer {
   font-size: large;
 }
 
+/* Footer link hover color */
 .footer-links a:hover {
-  color: #0077b5;
+  color: #0077b5; /* LinkedIn blue */
 }
+
 
 /* --- MEDIA QUERIES --- */
-
-/* Tablet Styles (max-width: 1024px) */
+/* 
+   Tablet Styles (≤1024px)
+   
+*/
 @media (max-width: 1024px) {
   nav {
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 14px 20px;
+    flex-direction: column;        /* For the header to stack items vertically */
+    justify-content: center;       /* Centers nav content along vertical space */
+    align-items: flex-start;       /* Aligns items to the left for natural reading flow */
+    padding: 14px 20px;            /* Reduces padding to save space on smaller screens */
   }
+
   .header-links {
-    gap: 16px;
-    font-size: 18px;
+    gap: 16px;                     /* Reduces space between header links */
+    font-size: 18px;               /* Slightly smaller text for better fit */
   }
+
   .contact-forms {
-    flex-direction: column;
-    gap: 30px;
-    padding: 4% 3%;
+    flex-direction: column;        /* Stacks email and meeting forms vertically */
+    gap: 30px;                     /* Adds vertical space between stacked forms */
+    padding: 4% 3%;                /* Slightly smaller padding for compact layout */
   }
+
   .form-box {
-    width: 100%;
-    max-width: 100%;
-    padding: 30px;
+    width: 100%;                   /* Makes form boxes take full available width */
+    max-width: 100%;               /* Prevents horizontal scrolling */
+    padding: 30px;                 /* Keeps decent spacing inside forms */
   }
+
   .form-box.email-form,
   .form-box.meeting-form {
-    min-width: unset;
-    max-width: 100%;
+    min-width: unset;              /* Removes fixed min width for flexibility */
+    max-width: 100%;               /* Allows forms to shrink if needed */
   }
+
   .social-container {
-    flex-direction: column;
-    align-items: stretch;
-    padding: 24px 24px 50px 24px;
-    gap: 20px;
+    flex-direction: column;        /* Moves social icons and text sections downward (one on top of the other) */
+    align-items: stretch;          /* Stretches content to full width */
+    padding: 24px 24px 50px 24px;  /* Reduces side padding for smaller viewports */
+    gap: 20px;                     /* Adds space between stacked sections */
   }
+
   .meeting-form {
-    padding: 28px;
+    padding: 28px;                 /* Slightly smaller inner spacing for better fit */
   }
+
   .meeting-form th, .meeting-form td {
-    font-size: 15px;
-    padding: 10px 5px;
+    font-size: 15px;               /* Smaller text for table content */
+    padding: 10px 5px;             /* Reduces table cell padding */
   }
 }
 
-/* Mobile Styles (max-width: 600px) */
+/*
+   Mobile Styles (≤600px)
+*/
 @media (max-width: 600px) {
   nav {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 9px 6px;
+    flex-direction: column;        /* For header to move downward */
+    align-items: flex-start;       /* Align links and icons to the left edge */
+    padding: 9px 6px;              /* Tight padding to save space */
   }
+
   .header-links {
-    flex-direction: column;
-    gap: 9px;
-    font-size: 15px;
+    flex-direction: column;        /* Stacks each navigation link vertically */
+    gap: 9px;                      /* Small gap between links */
+    font-size: 15px;               /* Shrinks text size for mobile readability */
   }
+
   .social-icons {
-    justify-content: flex-start;
-    gap: 9px;
-    margin-top: 7px;
+    justify-content: flex-start;   /* Aligns icons to the left */
+    gap: 9px;                      /* Keeps small space between icons */
+    margin-top: 7px;               /* Adds slight spacing above icons */
   }
+
   h1 {
-    font-size: 30px;
-    padding: 22px 0;
+    font-size: 30px;               /* Reduces main heading size */
+    padding: 22px 0;               /* Less vertical padding */
   }
+
   .contact-forms {
-    flex-direction: column;
-    gap: 18px;
-    padding: 3% 2%;
+    flex-direction: column;        /* For forms to appear one below the other */
+    gap: 18px;                     /* Tight vertical spacing between them */
+    padding: 3% 2%;                /* Smaller padding for compact layout */
   }
+
   .form-box {
-    width: 100%;
-    padding: 14px;
+    width: 100%;                   /* Form occupies full width of the screen */
+    padding: 14px;                 /* Reduces inner padding */
     min-width: unset;
     max-width: 100%;
   }
-  .form-box.email-form, .form-box.meeting-form {
-    min-width: unset;
+
+  .form-box.email-form, 
+  .form-box.meeting-form {
+    min-width: unset;              /* Removes constraints for responsive scaling */
     max-width: 100%;
   }
+
   .social-container {
-    padding: 10px 3px;
-    gap: 14px;
+    padding: 10px 3px;             /* Minimizes outer spacing */
+    gap: 14px;                     /* Slight gap between social sections */
   }
+
   .meeting-form {
-    padding: 8px;
+    padding: 8px;                  /* Very compact padding for smaller screens */
   }
+
   .meeting-form th, .meeting-form td {
-    font-size: 12px;
-    padding: 6px 2px;
+    font-size: 12px;               /* Makes table text fit within small width */
+    padding: 6px 2px;              /* Minimal spacing inside cells */
   }
+
   footer {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 15px 5px;
-    gap: 8px;
-    margin-top: 25px;
+    flex-direction: column;        /* For the footer to stack text and links downward */
+    align-items: flex-start;       /* Aligns footer content to left */
+    padding: 15px 5px;             /* Less padding for narrow view */
+    gap: 8px;                      /* Space between footer items */
+    margin-top: 25px;              /* Adds space above footer */
   }
+
   .footer-links {
-    gap: 8px;
-    font-size: 14px;
+    gap: 8px;                      /* Smaller space between footer links */
+    font-size: 14px;               /* Shrinks link text for readability */
   }
+
   .footer-text {
-    font-size: 15px;
-    margin: 2px 0;
+    font-size: 15px;               /* Keeps text legible */
+    margin: 2px 0;                 /* Slight vertical spacing */
   }
 }
